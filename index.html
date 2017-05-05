@@ -4,10 +4,28 @@
   <title>Cat Life</title>
 
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style type="text/css">
     body {
-      background-image: url("gradient-background.jpg");
+      /*background-image: url("gradient-background.jpg");*/
+      background: red; /* For browsers that do not support gradients */
+      background: -webkit-radial-gradient(red, yellow, green); /* Safari 5.1 to 6.0 */
+      background: -o-radial-gradient(red, yellow, green); /* For Opera 11.6 to 12.0 */
+      background: -moz-radial-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+      background: radial-gradient(red, yellow, green); /* Standard syntax */
+
     }
+
+    header {
+      padding: 0.5rem;
+      background-color: orange;
+      background-image: url("space-header.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: white;
+    }
+
+
 
     img { max-width: 100%; }
 
@@ -49,17 +67,47 @@
       <div class="photo-frame">
         <img srcset="yeah.jpg 1280w, yeah-800w.jpg 800w, yeah-400w.jpg 400w"
               sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
-              src="yeah-800w.jpg"
-              alt="really cool cat yelling 'yeah!'">
+              src="yeah-800w.jpg" alt="really cool cat yelling 'yeah!'">
       </div>
 
       <div class="photo-frame">
-        <img src="dragon.jpg" alt="a fire-breathing cat">
+        <img srcset="dragon.jpg 1280w, dragon-800w.jpg 800w, dragon-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="dragon-800w.jpg" src="dragon.jpg" alt="a fire-breathing cat">
       </div>
 
       <div class="photo-frame">
-        <img src="grr.jpg" alt="a cat making a weird face">
+        <img srcset="grr.jpg 1280w, grr-800w.jpg 800w, grr-400w.jpg 400w"
+              sizes="(max-width: 800px) 400px, (max-width: 1600px) 800px, (min-width: 1601px) 1200px"
+              src="grr-800w.jpg"  alt="a cat making a weird face">
       </div>
+
+      <!--
+      browser width 100%
+        body
+        section
+        .photo-container 90%
+        .photo-frame  55%
+        img 100%
+
+
+      browser width 2000px, img will be 1000px
+      browser width 900, img will be 450px
+      browser width 800, img will be 400px
+      browser width 1600, img will be 800px
+
+
+      -www class pj site styling
+      browsers 100%
+      body
+      section 70%
+      //.product-container
+      .item-container 90%
+      div 30%
+      img 50%
+    so that resulting image is about 9.45% of full browser width
+
+      -->
     </div>
   </section>
 
